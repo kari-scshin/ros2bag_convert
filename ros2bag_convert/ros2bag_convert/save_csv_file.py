@@ -27,7 +27,7 @@ def save_csv_file(data, csv_file_name, version=0, print_out=False):
             )
             if writer is None:
                 field_names = ["time"] + list(row_data.keys())
-                writer = csv.DictWriter(csv_file, fieldnames=field_names)
+                writer = csv.DictWriter(csv_file, fieldnames=field_names, extrasaction='ignore')
                 writer.writeheader()
             row_data["time"] = row_time
             # row_data = [row_time]+list(row_data.values())
